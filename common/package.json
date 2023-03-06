@@ -1,0 +1,30 @@
+{
+    "name": "common",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "publishConfig": {
+        "directory": "dist",
+        "linkDirectory": true
+    },
+    "scripts": {
+        "clean": "rimraf dist",
+        "watch": "tsc --watch",
+        "build": "pnpm clean && zenstack generate && tsc && copyfiles ./package.json ./README.md dist"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^18.14.6",
+        "copyfiles": "^2.4.1",
+        "prisma": "^4.11.0",
+        "rimraf": "^4.3.0",
+        "typescript": "^4.9.5",
+        "zenstack": "^1.0.0-alpha.55"
+    },
+    "dependencies": {
+        "@prisma/client": "^4.11.0",
+        "@zenstackhq/runtime": "^1.0.0-alpha.55"
+    }
+}
